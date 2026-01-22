@@ -1,4 +1,5 @@
 import { ScrambleText } from '@/components/ui/scrambletext';
+import { AnimatedBrandIcon } from '@/components/ui/badge';
 import { HOME_CONTENT } from '@/constants/home';
 import Link from 'next/link';
 import styles from './home.module.scss';
@@ -11,6 +12,9 @@ export default function HomePage() {
           <div className={styles.heroPanel}>
             <h1 className={styles.heroTitle}>
               <span className={styles.heroGreeting}>{HOME_CONTENT.hero.greeting}</span>
+              <div className={styles.heroImage}>
+                <AnimatedBrandIcon />
+              </div>
               <span className={styles.heroName}>{HOME_CONTENT.hero.name}</span>
             </h1>
           </div>

@@ -319,3 +319,137 @@
     transform: translateY(0);
   }
 }
+
+// Mobile Tap Feedback Mixin
+@mixin tap-feedback($scale: 0.96, $opacity: 0.7, $duration: $transition-fast) {
+  -webkit-tap-highlight-color: transparent;
+  transition: transform $duration, opacity $duration;
+  user-select: none;
+  -webkit-user-select: none;
+
+  &:active {
+    transform: scale($scale);
+    opacity: $opacity;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:active {
+      transform: none;
+    }
+  }
+}
+
+// ============================================================================
+// STRATEGI PEMBAGIAN 3 FONT DENGAN 3 PERAN
+// ============================================================================
+// 1. KH Interference LIGHT   → The Atmosphere (Judul Hero, Angka Besar)
+// 2. KH Interference REGULAR → The Anchor (Penegas Struktur, H2, H3, CTA)
+// 3. PP Fraktion MONO        → The Information (Menu, Tag, Data, Body)
+// ============================================================================
+
+// PERAN 1: THE ATMOSPHERE - KH Interference Light (Ukuran 64px+)
+// Gunakan untuk: Hero title, statistik besar, elemen dekoratif background
+@mixin font-atmosphere($size: $font-size-6xl) {
+  font-family: $font-primary;
+  font-size: $size;
+  font-weight: $font-weight-light;
+  line-height: 1;
+  letter-spacing: -0.03em; // Aggressive negative spacing untuk visual impact
+  text-rendering: optimizeLegibility;
+}
+
+// PERAN 2: THE ANCHOR - KH Interference Regular (Ukuran 24px - 48px)
+// Gunakan untuk: Judul section, card title, CTA button, subtitle
+@mixin font-anchor($size: $font-size-3xl, $weight: $font-weight-regular) {
+  font-family: $font-primary;
+  font-size: $size;
+  font-weight: $weight;
+  line-height: 1.2;
+  letter-spacing: -0.015em; // Medium spacing untuk readability
+  text-rendering: optimizeLegibility;
+}
+
+// PERAN 3: THE INFORMATION - PP Fraktion Mono (Ukuran 12px - 16px)
+// Gunakan untuk: Menu, tag, label, caption, body text
+@mixin font-information($size: $font-size-base, $transform: none) {
+  font-family: $font-mono;
+  font-size: $size;
+  font-weight: $font-weight-regular;
+  line-height: 1.5;
+  letter-spacing: 0.02em; // Positive spacing untuk clarity data
+  text-transform: $transform; // Bisa 'uppercase' untuk label
+  font-kerning: auto;
+}
+
+// VARIASI KHUSUS
+
+// The Atmosphere - Varian untuk Statistik/Angka
+@mixin font-atmosphere-stat {
+  @include font-atmosphere($font-size-6xl);
+  font-variant-numeric: tabular-nums; // Agar angka rata lurus
+  letter-spacing: -0.05em; // Extra tight spacing untuk impact maksimal
+}
+
+// The Anchor - Varian untuk CTA/Button
+@mixin font-anchor-cta {
+  @include font-anchor($font-size-lg, $font-weight-regular);
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  font-weight: $font-weight-semibold;
+}
+
+// The Anchor - Varian untuk Card Title (Medium)
+@mixin font-anchor-card {
+  @include font-anchor($font-size-2xl, $font-weight-regular);
+  letter-spacing: -0.01em;
+}
+
+// The Information - Varian untuk Label/Tag
+@mixin font-information-label {
+  @include font-information($font-size-xs, uppercase);
+  font-weight: $font-weight-medium;
+  letter-spacing: 0.05em; // Extra wide untuk label
+}
+
+// The Information - Varian untuk Menu/Navigation
+@mixin font-information-nav {
+  @include font-information($font-size-sm, uppercase);
+  font-weight: $font-weight-regular;
+  letter-spacing: 0.04em;
+}
+
+// The Information - Varian untuk Caption/Meta
+@mixin font-information-caption {
+  @include font-information($font-size-xs);
+  color: $color-text-light;
+  font-style: italic;
+}
+
+// The Information - Varian untuk Body Paragraph
+@mixin font-information-body {
+  @include font-information($font-size-base);
+  line-height: 1.7;
+  letter-spacing: 0.005em;
+}
+
+// Alternative tap feedback with color change
+@mixin tap-feedback-color($scale: 0.98, $opacity: 0.8, $color-change: true, $duration: $transition-fast) {
+  -webkit-tap-highlight-color: transparent;
+  transition: transform $duration, opacity $duration, color $duration;
+  user-select: none;
+  -webkit-user-select: none;
+
+  &:active {
+    transform: scale($scale);
+    opacity: $opacity;
+    @if $color-change {
+      color: $color-text-light;
+    }
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:active {
+      transform: none;
+    }
+  }
+}

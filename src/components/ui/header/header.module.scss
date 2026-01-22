@@ -41,13 +41,11 @@
     border: none;
     cursor: pointer;
     padding: 0;
-    font-family: $font-primary;
-    font-size: $font-size-sm;
-    font-weight: $font-weight-medium;
+    @include font-information-nav;
     color: $color-text;
-    text-transform: uppercase;
-    letter-spacing: $letter-spacing-wider;
     transition: color $transition-fast;
+    line-height: 1;
+    height: 100%;
 
     &:hover {
       color: $color-text-light;
@@ -61,13 +59,12 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 100%; // Match parent container height
-      line-height: 1; // Ensure consistent line height
+      height: 100%;
 
-      // Override ScrambleText mobile styles that cause misalignment
       span {
         padding: 0 !important;
         min-height: auto !important;
+        line-height: 1;
       }
     }
   }
@@ -136,9 +133,7 @@
   }
 
   a {
-    @include body-text;
-    font-size: $font-size-base;
-    font-family: $font-primary;
+    @include font-information-nav;
     color: $color-text;
     text-decoration: none;
     display: block;
@@ -149,8 +144,6 @@
     &:hover {
       color: $color-text-light;
     }
-
-    // Hover line effects removed
   }
 }
 
@@ -167,9 +160,7 @@
 }
 
 .ctaLink {
-  @include body-text;
-  font-size: $font-size-base;
-  font-family: $font-primary;
+  @include font-information-nav;
   color: $color-text;
   text-decoration: none;
   display: block;
@@ -180,8 +171,6 @@
   &:hover {
     color: $color-text-light;
   }
-
-  // Hover line effects removed
 }
 
 // Mobile Menu Overlay
@@ -243,16 +232,13 @@
   border: none;
   cursor: pointer;
   padding: 0;
-  font-family: $font-primary;
-  font-size: $font-size-base;
-  font-weight: $font-weight-medium;
+  @include font-information-nav;
   color: $color-text;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
   position: absolute;
   top: $spacing-lg;
   right: $spacing-lg;
   transition: color $transition-fast;
+  line-height: 1;
 
   &:hover {
     color: $color-text-light;
@@ -262,13 +248,15 @@
     outline: none;
   }
 
-  // Hover line effects removed
-
   // Responsive adjustments
   @media (max-width: 480px) {
     top: $spacing-md;
     right: $spacing-md;
-    font-size: $font-size-sm;
+    font-size: $font-size-xs;
+  }
+
+  span {
+    line-height: 1;
   }
 }
 
@@ -305,17 +293,13 @@
   }
 
   a {
-    @include body-text;
-    font-size: $font-size-xl;
-    font-family: $font-primary;
-    font-weight: $font-weight-regular;
+    @include font-anchor-card;
     color: $color-text;
     text-decoration: none;
     display: block;
     padding: $spacing-sm 0;
     position: relative;
     transition: color $transition-fast;
-    line-height: 1.3;
     text-align: center;
 
     &:hover {
@@ -325,8 +309,6 @@
     &:focus {
       outline: none;
     }
-
-    // Hover line effects removed
 
     // Responsive adjustments for smaller screens
     @media (max-width: 480px) {
@@ -339,40 +321,48 @@
 // Mobile CTA Section
 .mobileCta {
   margin-top: auto;
-  padding: $spacing-lg 0 $spacing-md 0;
+  padding: $spacing-md $spacing-md $spacing-lg $spacing-md;
   text-align: center;
   width: 100%;
   border-top: 1px solid rgba($color-border, 0.2);
-  max-width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .mobileCtaLink {
-  @include body-text;
-  font-size: $font-size-base;
-  font-family: $font-primary;
+  @include font-information-nav;
   color: $color-text;
   text-decoration: none;
-  display: block;
-  padding: $spacing-xs 0;
+  display: inline-block;
+  padding: $spacing-md $spacing-lg;
   position: relative;
-  transition: color $transition-fast;
+  transition: color $transition-fast, transform $transition-fast, opacity $transition-fast;
   text-align: center;
-  margin-top: $spacing-sm;
+  line-height: 1;
+  border-radius: $border-radius-sm;
+  -webkit-tap-highlight-color: transparent;
 
   &:hover {
     color: $color-text-light;
+  }
+
+  &:active {
+    transform: scale(0.96);
+    opacity: 0.7;
   }
 
   &:focus {
     outline: none;
   }
 
-  // Hover line effects removed
-
   // Responsive adjustments
   @media (max-width: 480px) {
-    font-size: $font-size-sm;
-    padding: $spacing-xs 0;
-    margin-top: $spacing-xs;
+    padding: $spacing-md $spacing-md;
+    font-size: $font-size-xs;
+  }
+
+  span {
+    line-height: 1;
   }
 }

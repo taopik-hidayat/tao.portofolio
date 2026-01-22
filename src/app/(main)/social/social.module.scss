@@ -20,13 +20,14 @@
 }
 
 .socialTitle {
-  @include heading-1;
+  @include font-atmosphere($font-size-5xl);
   margin: 0 0 $spacing-2xl 0;
   color: $color-text;
   text-align: center;
 
   @include mobile {
     margin: 0 0 $spacing-xl 0;
+    font-size: $font-size-3xl;
   }
 }
 
@@ -101,13 +102,10 @@
 
 // Visit hint in hover content
 .visitHint {
-  color: $color-text-light;
-  font-size: $font-size-sm;     // Slightly larger for better visibility
-  line-height: 1.5;
+  @include font-information-caption;
   overflow-wrap: anywhere;
-  text-align: center;           // Center the text
-  margin: $spacing-lg 0;       // Vertical margin for spacing
-  font-weight: $font-weight-medium;
+  text-align: center;
+  margin: $spacing-lg 0;
 
   @include mobile {
     font-size: $font-size-xs;
@@ -145,10 +143,7 @@
 }
 
 .platformText {
-  @include body-text;
-  @include link-underline;
-  font-size: $font-size-base;
-  font-family: $font-primary;
+  @include font-anchor-card;
   color: $color-text;
 
   @include mobile {
@@ -157,10 +152,7 @@
 }
 
 .platformTextSmall {
-  @include body-text;
-  @include link-underline;
-  font-size: $font-size-sm;
-  font-family: $font-primary;
+  @include font-information-label;
   color: $color-text;
   white-space: nowrap;
   overflow: hidden;

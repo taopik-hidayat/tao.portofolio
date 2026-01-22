@@ -28,11 +28,6 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
           <div className={styles.mobileNavContent}>
             <ul className={styles.mobileNavList}>
               <li>
-                <Link href="/about" onClick={onClose}>
-                  <ScrambleText shouldScramble={false}>About</ScrambleText>
-                </Link>
-              </li>
-              <li>
                 <Link href="/projects" onClick={onClose}>
                   <ScrambleText shouldScramble={false}>Work</ScrambleText>
                 </Link>
@@ -40,11 +35,6 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
               <li>
                 <Link href="/articles" onClick={onClose}>
                   <ScrambleText shouldScramble={false}>Articles</ScrambleText>
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" onClick={onClose}>
-                  <ScrambleText shouldScramble={false}>Contact</ScrambleText>
                 </Link>
               </li>
               <li>
@@ -57,8 +47,8 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
 
           {/* CTA Section */}
           <div className={styles.mobileCta}>
-            <Link href="/contact" onClick={onClose} className={styles.mobileCtaLink}>
-              <ScrambleText shouldScramble={false}>let&apos;s talk</ScrambleText>
+            <Link href="/social" onClick={onClose} className={styles.mobileCtaLink}>
+              <ScrambleText shouldScramble={false}>let&apos;s connect</ScrambleText>
             </Link>
           </div>
         </nav>

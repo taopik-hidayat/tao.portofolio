@@ -46,12 +46,8 @@
 }
 
 .badgeText {
+  @include font-information-label;
   color: $color-text;
-  font-family: $font-mono;
-  font-size: 10px;
-  font-weight: $font-weight-medium;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
   display: flex;
   align-items: center;
 }

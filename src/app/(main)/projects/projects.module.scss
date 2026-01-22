@@ -22,13 +22,14 @@
 
 // Projects title - Optimized spacing
 .projectsTitle {
-  @include heading-1;
+  @include font-atmosphere($font-size-5xl);
   margin: 0 0 $spacing-2xl 0;
   color: $color-text;
   text-align: center;
 
   @include mobile {
     margin: 0 0 $spacing-xl 0;
+    font-size: $font-size-3xl;
   }
 }
 
@@ -104,14 +105,10 @@
 }
 
 .categoryName {
-  @include body-text;
-  @include link-underline;
-  font-family: $font-primary;
+  @include font-anchor-card;
   color: $color-text;
-  font-weight: $font-weight-medium;
   display: block;
   margin-bottom: $spacing-xs;
-  font-size: $font-size-base;
 
   @include mobile {
     font-size: $font-size-sm;
@@ -120,13 +117,8 @@
 }
 
 .categoryType {
-  @include body-text;
-  font-family: $font-primary;
+  @include font-information-label;
   color: $color-text-light;
-  font-size: $font-size-xs;
-  font-weight: $font-weight-medium;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
 
   @include mobile {
     font-size: calc($font-size-xs * 0.9);
