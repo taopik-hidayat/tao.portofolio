@@ -6,36 +6,37 @@ export const HOME_CONTENT = {
     name: "Taopik Hidayat",
   },
 
-  // About Section
+  // About Section - MENCERITAKAN KETANGGUHAN & KEAMANAN
   about: {
     title: "About",
     content: [
-      "I'm a developer exploring the evolving landscape of AI and Web3 technologies. My journey involves continuous learning and experimentation, always seeking to understand how these tools can create meaningful solutions.",
-      "I approach technology with curiosity and humility, recognizing that the field is constantly evolving. When I'm not coding, you'll find me sketching ideas, exploring new concepts, or enjoying a thoughtful cup of coffee while pondering the next challenge."
+      "I am an independent explorer in the AI and Web3 space. Unlike many, I don't just consume technology; I audit and explore it—from securing mobile environments for crypto assets to advocating for open-source transparency.",
+      "Building entirely from a legacy mobile device, I have learned that limitation breeds creativity. My journey is defined by resilience: turning hardware constraints into a discipline of optimization, security awareness, and unyielding persistence."
     ]
   },
 
-  // Work/Projects Section
+  // Work/Projects Section - MENJELASKAN RISET BROWSER & SECURITY ANDA
   work: {
-    title: "Work",
-    content: "I'm building projects that reflect my curiosity about technology and its potential to create meaningful change. Each piece represents a step in my learning journey, an experiment in thoughtful development, and an effort to contribute solutions that matter.",
-    linkText: "VIEW PROJECTS",
+    title: "Current Focus",
+    content: "My current research focuses on Mobile-Native Security. I am analyzing browser infrastructures (like Mises and more.) and experimenting with secure seed phrase storage on limited-resource devices. This work demonstrates that the future of Open Source AI must be accessible to everyone, not just those with high-end hardware.",
+    linkText: "VIEW RESEARCH",
     linkHref: "/projects"
   },
 
-  // Articles Section
+  // Articles Section - "MANIFESTO" ANDA TENTANG HP JADUL & ADOPSI
   articles: {
-    title: "Articles",
-    content: "Here I share thoughts and learnings from my journey with technology and creativity. These writings reflect my ongoing exploration of ideas, from practical tutorials to reflections on how technology shapes our world and influences human creativity.",
-    linkText: "VIEW ARTICLES",
+    title: "Perspective",
+    content: "The Reality of Mobile Web3 Adoption: Exploring the decentralized web exclusively from a legacy Android device has taught me a crucial lesson—security is a mindset, not a spec sheet. I advocate for an AI future that remains open and usable for the global majority, bridging the gap between complex tech and real-world constraints.",
+    linkText: "READ THOUGHTS",
     linkHref: "/articles"
   },
 
-  // Contact Section
+  // Contact Section - LEBIH TEGAS & BERKARAKTER
   contact: {
     title: "Contact",
-    content: "Have an idea or want to connect? I'd love to hear from you and explore how we might collaborate on something meaningful. Whether it's technology, creativity, or just sharing perspectives on the world we're shaping together.",
-    linkText: "VIEW CONTACT",
+    content: "I am ready to contribute to the open-source narrative. If you value resilience, independent thinking, and a boots-on-the-ground perspective on AI adoption, let's connect.",
+    linkText: "LET'S CONNECT",
     linkHref: "/contact"
   }
 } as const;
+  
