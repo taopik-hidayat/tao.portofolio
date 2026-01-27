@@ -1,7 +1,8 @@
 export const HOME_CONTENT = {
   hero: {
-    greeting: "Hello, I'm",
-    name: "Taopik Hidayat",
+    greeting: "Hi, I'm",
+    name: "Tao Full Stack Engineer & AI-Augmented Developer.",
+    subtitle: "Bridging practical solutions through the Hybrid AI Workflow."
   },
 
   about: {
