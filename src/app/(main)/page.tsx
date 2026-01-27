@@ -17,6 +17,7 @@ export default function HomePage() {
               </div>
               <span className={styles.heroName}>{HOME_CONTENT.hero.name}</span>
             </h1>
+            <p className={styles.heroSubtitle}>{HOME_CONTENT.hero.subtitle}</p>
           </div>
         </div>
       </section>
